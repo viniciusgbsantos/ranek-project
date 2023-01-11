@@ -11,6 +11,7 @@
         </ProdutoItem>
       </div>
     </div>
+    <PaginaCarregando v-else />
   </section>
 </template>
 
@@ -33,7 +34,7 @@ export default {
   },
   methods: {
     getCompras() {
-      api.get(`/transacao?comprador_id=${this.usuario.id}`).then(response => {
+      api.get(`/transacao?tipo=comprador_id`).then(response => {
         this.compras = response.data;
       });
     }
@@ -47,6 +48,8 @@ export default {
     if (this.login) {
       this.getCompras();
     }
+    document.title = "Compras Realizadas"
+
   }
 };
 </script>

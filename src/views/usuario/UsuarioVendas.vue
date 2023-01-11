@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     getVendas() {
-      api.get(`/transacao?vendedor_id=${this.usuario.id}`).then(response => {
+      api.get(`/transacao?tipo=vendedor_id`).then(response => {
         this.vendas = response.data;
       });
     }
@@ -53,6 +53,7 @@ export default {
     if (this.login) {
       this.getVendas();
     }
+    document.title = "Vendas Realizadas"
   }
 };
 </script>
@@ -81,5 +82,14 @@ h3 {
   margin: 0px;
   justify-self: end;
 }
+
+@media screen and (max-width: 500px) {
+  .entrega {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+  h3 {
+    justify-self: start;
+  }
+}
 </style>
-  
