@@ -1,4 +1,6 @@
-# ranek
+# Ranek
+
+Plataforma de compra e venda com login e cadastro usando Vue.js e REST API
 
 ## Project setup
 ```
